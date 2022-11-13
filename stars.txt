@@ -1,0 +1,48 @@
+
+package khjhhg;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class addingremoving {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        ArrayList<String> list=new ArrayList<>();
+        list.add("fox");
+        list.add("beer");
+        list.add("deer");
+        System.out.println(list);
+        
+       star s=new star();
+        s.insertstar(list);
+        s.removestar(list);
+         
+    }
+    
+}
+class star
+{
+    public void insertstar(ArrayList list1)
+    {
+        int s=list1.size();
+            for(int j=0;j<=s+1;j+=2)
+            {
+                 list1.add(j,"*");
+                 
+            }
+           System.out.println("After inserting"+list1);        
+    }
+    public void removestar(ArrayList list2)
+    {
+         Iterator<String> itr = list2.iterator();
+       while (itr.hasNext())
+       {
+         String i = itr.next();
+         if (i.equals("*")) 
+         {
+          itr.remove();
+         } 
+        }
+           System.out.println("After removing"+list2);       
+    }
+}

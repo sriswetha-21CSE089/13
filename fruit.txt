@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package khjhhg;
+
+import java.util.*;
+
+/**
+ *
+ * @author Vishnu
+ */
+public class stars {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        ArrayList <fruit> list=new ArrayList<>();
+        list.add(new fruit("mango",10,20));
+           list.add(new fruit("apple",20,50));
+           list.add(new fruit("jackfruit",10,30));
+              list.add(new fruit("orange",30,20));
+               System.out.println(list);
+              Collections.sort(list, new Sortbyname());
+             System.out.println(list);
+    }
+    
+}
+class fruit
+{
+   String name;
+   float price;
+   int qty;
+
+    public fruit(String name, float price, int qty) {
+        this.name = name;
+        this.price = price;
+        this.qty = qty;
+    }
+
+    @Override
+    public String toString() {
+        return "fruit{" + "name=" + name + ", price=" + price + ", qty=" + qty + '}';
+    }
+   
+}
+class Sortbyname implements Comparator<fruit> 
+{ 
+     public int compare(fruit a,fruit b) 
+     { 
+       /*if(a.name.compareTo(b.name)>0)
+       { 
+         return 1;  
+       }
+       else
+       {
+           return -1;
+       }*/
+         return a.name.compareTo(b.name);
+     } 
+}
