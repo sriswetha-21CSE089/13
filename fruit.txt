@@ -32,10 +32,10 @@ public class stars {
 class fruit
 {
    String name;
-   float price;
+   int price;
    int qty;
 
-    public fruit(String name, float price, int qty) {
+    public fruit(String name, int price, int qty) {
         this.name = name;
         this.price = price;
         this.qty = qty;
@@ -51,14 +51,7 @@ class Sortbyname implements Comparator<fruit>
 { 
      public int compare(fruit a,fruit b) 
      { 
-       /*if(a.name.compareTo(b.name)>0)
-       { 
-         return 1;  
-       }
-       else
-       {
-           return -1;
-       }*/
-         return a.name.compareTo(b.name);
+      
+         return a.price-(b.price);
      } 
 }
